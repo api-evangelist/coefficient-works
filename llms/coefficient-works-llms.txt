@@ -1,0 +1,17 @@
+# llms.txt for https://coefficient.io/
+
+## Overall
+Coefficient is a no‑code platform that connects Google Sheets and Excel to 60+ business systems like Salesforce, HubSpot, QuickBooks, Netsuite, Snowflake, MySQL, Google Ads and more. Coefficient AI Assistant also enables AI on your Google Sheets to create pivot tables, formulas, charts, cleaning data and more using natural language. Used by 50000+ companies for spreadsheet automation and data management.
+
+## Categories
+- [Simple Templates](https://coefficient.io/templates): Gallery of 50+ ready‑to‑use spreadsheet templates for finance, sales, marketing, and operations—import in one click and stay live‑connected to your data sources.  
+- [Dashboard Examples](https://coefficient.io/dashboard-examples): Pre‑built analytics dashboards (traffic, sessions, bounce rate, revenue) for Sheets & Excel—fully customizable and auto‑refreshing.  
+- [Integrations](https://coefficient.io/integrations): Point‑and‑click connectors for Google Sheets & Excel to 60+ systems (Salesforce, NetSuite, Stripe, HubSpot, etc.) with live two‑way sync and scheduled refreshes.  
+- [Salesforce Reporting Management](https://coefficient.io/salesforce-reporting): Inventory of tutorials, guides, advanced workflows, spreadsheet automation tips, expert insights and best practices for Salesforce Reporting Management  
+- [HubSpot Data Management](https://coefficient.io/hubspot-data-management): Inventory of tutorials, guides, advanced workflows, spreadsheet automation tips, expert insights and best practices for HubSpot Data Management  
+- [Online Calculators](https://coefficient.io/calculate): Interactive spreadsheet calculators for marketing and finance (ROI, Facebook Ads cost, break‑even analysis) that pull live data.  
+- [About Us](https://coefficient.io/about): Company mission, team bios, and roadmap.  
+- [Terms](https://coefficient.io/terms): Terms of service and user agreements.  
+- [Data Security](https://coefficient.io/data-security): Overview of security practices, compliance standards, and data governance measures.  
+- [Help Center](https://help.coefficient.io/hc/en-us): Support articles, FAQs, and troubleshooting guides.  
+- [Get Started](https://coefficient.io/get-started): Onboarding guide to connect your first data source, run your first sync, and build live reports.

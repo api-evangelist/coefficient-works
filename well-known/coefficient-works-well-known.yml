@@ -1,0 +1,32 @@
+generated: '2026-07-20'
+method: probed
+source: https://coefficient.io/
+notes: >-
+  Probed the full /.well-known/ discovery surface on the company's only public host.
+  Nothing is published. Coefficient consumes other providers' APIs from inside Google
+  Sheets and Excel and exposes no API host of its own, so there is no second host to
+  probe. The one machine-readable discovery document the company does publish is
+  /llms.txt (200), captured verbatim at llms/coefficient-works-llms.txt.
+host: https://coefficient.io
+documents:
+- path: /.well-known/security.txt
+  status: 404
+- path: /.well-known/openid-configuration
+  status: 404
+- path: /.well-known/oauth-authorization-server
+  status: 404
+- path: /.well-known/api-catalog
+  status: 404
+- path: /.well-known/ai-plugin.json
+  status: 404
+- path: /.well-known/mcp.json
+  status: 404
+other_discovery:
+- path: /llms.txt
+  status: 200
+  file: ../llms/coefficient-works-llms.txt
+- path: /robots.txt
+  status: 200
+- path: /sitemap.xml
+  status: 200
+  note: redirects to /sitemap_index.xml

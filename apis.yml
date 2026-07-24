@@ -1,21 +1,95 @@
 aid: coefficient-works
 name: Coefficient Works
-description: Coefficient Works is a company surfaced as a portfolio company of battery-ventures and added
-  to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment
-  pipeline.
+description: 'Coefficient Works, Inc. (operating as Coefficient) is a San Mateo, California
+  no-code data platform that connects live business data to Google Sheets and Microsoft
+  Excel. Founded in 2019 by Navneet Loiwal and Tommy Tsai, the company provides point-and-click
+  connectors to 60+ business systems including Salesforce, HubSpot, NetSuite, QuickBooks,
+  Snowflake, MySQL, Stripe, Looker, Tableau and Google Ads, with scheduled two-way
+  sync, spreadsheet-native alerting through Slack and email, live web dashboards,
+  and an AI assistant that builds pivot tables, formulas, charts and data-cleaning
+  steps from natural language. Coefficient is a consumer of other providers'' APIs
+  rather than a producer: as of this enrichment pass it publishes no public developer
+  API, no OpenAPI or AsyncAPI description, no client SDKs, and no developer portal.
+  Distribution is through the Google Workspace Marketplace and Microsoft AppSource.
+  The company is backed by Battery Ventures, Foundation Capital and S28 Capital.'
 url: https://raw.githubusercontent.com/api-evangelist/coefficient-works/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://coefficient.io/wp-content/uploads/2026/02/homepage-meta-image-v2.png
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - battery-ventures
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: profile
+x-tier-reason: enriched-no-public-api
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
+- Spreadsheets
+- Google Sheets
+- Microsoft Excel
+- Data Integration
+- No-Code
+- Business Intelligence
+- Reporting
+- Revenue Operations
+- SaaS
 apis: []
+common:
+- type: DomainSecurity
+  url: security/coefficient-works-domain-security.yml
+- type: Website
+  url: https://coefficient.io/
+- type: Product
+  url: https://coefficient.io/product
+- type: Documentation
+  url: https://help.coefficient.io/hc/en-us
+- type: Support
+  url: https://help.coefficient.io/hc/en-us
+- type: GettingStarted
+  url: https://coefficient.io/get-started
+- type: Blog
+  url: https://coefficient.io/blog
+- type: Pricing
+  url: https://coefficient.io/pricing
+- type: SignUp
+  url: https://coefficient.io/get-started
+- type: TermsOfService
+  url: https://coefficient.io/terms
+- type: PrivacyPolicy
+  url: https://coefficient.io/privacy-policy
+- type: Community
+  url: https://coefficient.io/community
+- type: About
+  url: https://coefficient.io/about
+- type: ContactUs
+  url: https://coefficient.io/contact
+- type: Careers
+  url: https://coefficient.io/careers
+- type: Integrations
+  url: https://coefficient.io/integrations
+- type: Marketplace
+  url: https://marketplace.atlassian.com/vendors/1220522/coefficient-works-inc
+- type: Templates
+  url: https://coefficient.io/templates
+- type: LLMsTxt
+  url: llms/coefficient-works-llms.txt
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 3
+  pass: local-v1
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
