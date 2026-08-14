@@ -9,9 +9,16 @@ description: 'Coefficient Works, Inc. (operating as Coefficient) is a San Mateo,
   and an AI assistant that builds pivot tables, formulas, charts and data-cleaning
   steps from natural language. Coefficient is a consumer of other providers'' APIs
   rather than a producer: as of this enrichment pass it publishes no public developer
-  API, no OpenAPI or AsyncAPI description, no client SDKs, and no developer portal.
-  Distribution is through the Google Workspace Marketplace and Microsoft AppSource.
-  The company is backed by Battery Ventures, Foundation Capital and S28 Capital.'
+  API, no OpenAPI or AsyncAPI description, no client SDKs, and no developer portal,
+  and its "Connect Any API" feature is a consumer-side HTTP client (GET/POST, bearer
+  token / API key / basic auth, cursor, offset and page-number pagination) that writes
+  third-party API responses into a sheet. The one programmatic surface Coefficient
+  serves is an inbound webhook trigger URL, issued per import on the Pro and Enterprise
+  plans, that an external system calls to force an immediate refresh — capped at 12
+  calls per hour with a five-minute minimum interval. Coefficient states it is SOC 2
+  compliant and provides the audit report on request. Distribution is through the
+  Google Workspace Marketplace and Microsoft AppSource. The company is backed by
+  Battery Ventures, Foundation Capital and S28 Capital.'
 url: https://raw.githubusercontent.com/api-evangelist/coefficient-works/refs/heads/main/apis.yml
 accessModel:
   pricing: unknown
@@ -33,7 +40,7 @@ x-tier: profile
 x-tier-reason: enriched-no-public-api
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-20'
+modified: '2026-08-14'
 tags:
 - Company
 - Spreadsheets
@@ -85,10 +92,22 @@ common:
   url: https://coefficient.io/templates
 - type: LLMsTxt
   url: llms/coefficient-works-llms.txt
+- type: Webhooks
+  url: asyncapi/coefficient-works-webhooks.yml
+- type: RateLimits
+  url: rate-limits/coefficient-works-rate-limits.yml
+- type: Plans
+  url: plans/coefficient-works-plans-pricing.yml
+- type: Conformance
+  url: conformance/coefficient-works-conformance.yml
+- type: Compliance
+  url: https://coefficient.io/data-security
+- type: GitHubOrganization
+  url: https://github.com/coeff
 x-enrichment:
-  date: '2026-07-20'
+  date: '2026-08-14'
   status: enriched
-  artifacts_added: 3
+  artifacts_added: 6
   pass: local-v1
 maintainers:
 - FN: Kin Lane
