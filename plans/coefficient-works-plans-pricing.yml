@@ -1,0 +1,121 @@
+generated: '2026-08-14'
+method: searched
+source: https://coefficient.io/pricing
+name: Coefficient plans and pricing
+notes: >-
+  Read verbatim from the public pricing page on 2026-08-14. Coefficient publishes
+  four self-serve tiers with quota-based limits; there is no metered overage
+  published for any tier — quotas are hard monthly caps on refreshes, exports and
+  alerts. Prices shown are the MONTHLY list prices; the page also offers an annual
+  toggle advertised as "Save 17% annually" (the discounted annual figures are
+  rendered client-side and were not captured). Pro is priced per user with a hard
+  5-user ceiling. These are PRODUCT plans for the Google Sheets add-on and Excel
+  add-in — Coefficient publishes no developer API and therefore no API pricing.
+currency: USD
+billing_period: month
+trial:
+  available: true
+  description: Try Pro free for 30 days
+  source: https://coefficient.io/pricing
+annual_discount: Save 17% annually
+plan_count: 4
+plans:
+- name: Free
+  price: 0
+  currency: USD
+  period: month
+  unit: account
+  audience: For individuals looking to explore the possibilities of live data in sheets
+  limits:
+    data_sources: 3
+    data_sources_tier: standard only
+    accounts_per_source: 1
+    import_row_size: 5000
+    import_refreshes_per_month: 50
+    auto_data_refresh: manual only
+    export_row_size: 100
+    export_runs_per_month: 50
+    auto_data_export: manual only
+    alerts_per_month: 30
+  features:
+  - On Sheet AI Functions
+  - Help Center Access
+  - Email Support
+  overage: none published
+- name: Starter
+  price: 49
+  currency: USD
+  period: month
+  unit: account
+  audience: For solo builders ready to operationalize their manual workflows
+  inherits: Free
+  limits:
+    accounts_per_source: 1
+    import_refreshes_per_month: 500
+    auto_data_refresh: daily
+    export_row_size: 500
+    export_refreshes_per_month: 500
+    auto_data_export: daily
+    alerts_per_month: 100
+  features:
+  - Data Snapshots
+  - SQL, Chart, & Pivot Builders
+  - Chat, Email Support
+  overage: none published
+- name: Pro
+  price: 99
+  currency: USD
+  period: month
+  unit: user
+  audience: For small teams that need automation, larger data pulls, and instant answers
+  inherits: Starter
+  most_popular: true
+  limits:
+    data_sources: 6
+    data_sources_tier: standard only
+    accounts_per_source: 3
+    import_row_size: unlimited
+    import_refreshes_per_month: 5000
+    auto_data_refresh: hourly
+    export_row_size: unlimited
+    export_refreshes_per_month: 5000
+    auto_data_export: hourly
+    alerts_per_month: 300
+    users_max: 5
+  features:
+  - Dynamic Recipients
+  - Multi-User Support (5 users max)
+  - Shared Connections
+  - Shared Import Templates
+  - Webhook triggers
+  - Priority Chat, Email Support
+  overage: none published
+- name: Enterprise
+  price: null
+  price_note: volume discounts for teams — contact sales
+  currency: USD
+  period: month
+  audience: For large teams that need advanced control, security, and dedicated support
+  inherits: Pro
+  limits:
+    data_sources_tier: standard and premium
+    import_refreshes_per_month: unlimited
+    export_refreshes_per_month: unlimited
+    alerts_per_month: unlimited
+  features:
+  - Admin Controls
+  - Custom SSO
+  - Consolidated Billing
+  - Security Review & MSA
+  - Webhook triggers
+  - Dedicated Chat, Email Support
+  overage: none published
+premium_data_sources:
+  note: >-
+    Premium data sources are gated to Enterprise. Named on the pricing page as
+    Snowflake, Tableau, Looker, BigQuery, Databricks, SQL Server, NetSuite and
+    Sage Intacct.
+x-evidence:
+- url: https://coefficient.io/pricing
+  http_status: 200
+  fetched: '2026-08-14'

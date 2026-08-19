@@ -1,12 +1,20 @@
-generated: '2026-07-20'
+generated: '2026-08-14'
 method: probed
 source: https://coefficient.io/
 notes: >-
-  Probed the full /.well-known/ discovery surface on the company's only public host.
-  Nothing is published. Coefficient consumes other providers' APIs from inside Google
-  Sheets and Excel and exposes no API host of its own, so there is no second host to
-  probe. The one machine-readable discovery document the company does publish is
-  /llms.txt (200), captured verbatim at llms/coefficient-works-llms.txt.
+  Re-probed 2026-08-14. NOTHING is published on the /.well-known/ surface — every
+  path returns 404 on coefficient.io. No WellKnown and no SecurityTxt pointer is
+  wired in apis.yml, because a recorded absence must never be scored as a presence.
+  Two hosts were probed. coefficient.io is the marketing/product site and returns
+  a genuine 404 for every well-known path. app.coefficient.io is the single-page
+  web app and returns HTTP 200 with the SAME HTML shell for EVERY path — including
+  /openapi.json, /openapi.yaml, /swagger.json, /api-docs and every /.well-known/*
+  path — so all of its 200s are catch-all false positives and were rejected; none
+  carried a document. help.coefficient.io is a Zendesk help center and 404s
+  everything. There is no API host to probe: Coefficient consumes other providers'
+  APIs from inside Google Sheets and Excel and publishes no developer API of its own.
+  The one machine-readable discovery document the company does serve is /llms.txt
+  (200), captured verbatim at llms/coefficient-works-llms.txt.
 host: https://coefficient.io
 documents:
 - path: /.well-known/security.txt
@@ -15,12 +23,37 @@ documents:
   status: 404
 - path: /.well-known/oauth-authorization-server
   status: 404
+- path: /.well-known/oauth-protected-resource
+  status: 404
 - path: /.well-known/api-catalog
   status: 404
 - path: /.well-known/ai-plugin.json
   status: 404
 - path: /.well-known/mcp.json
   status: 404
+- path: /.well-known/agent-card.json
+  status: 404
+- path: /.well-known/agent.json
+  status: 404
+other_hosts:
+- host: https://app.coefficient.io
+  verdict: spa-catch-all
+  note: >-
+    Returns 200 with an identical HTML shell for every path probed. All 200s
+    rejected — no document was served on any of them.
+  probed:
+  - {path: /openapi.json, status: 200, body: html-shell, accepted: false}
+  - {path: /openapi.yaml, status: 200, body: html-shell, accepted: false}
+  - {path: /swagger.json, status: 200, body: html-shell, accepted: false}
+  - {path: /v1/openapi.json, status: 200, body: html-shell, accepted: false}
+  - {path: /api-docs, status: 200, body: html-shell, accepted: false}
+  - {path: /api/openapi.json, status: 404}
+  - {path: /.well-known/agent-card.json, status: 200, body: html-shell, accepted: false}
+  - {path: /.well-known/agent.json, status: 200, body: html-shell, accepted: false}
+  - {path: /.well-known/mcp.json, status: 200, body: html-shell, accepted: false}
+- host: https://help.coefficient.io
+  verdict: no-documents
+  note: Zendesk help center; 404 on every well-known and spec path probed.
 other_discovery:
 - path: /llms.txt
   status: 200
@@ -30,3 +63,10 @@ other_discovery:
 - path: /sitemap.xml
   status: 200
   note: redirects to /sitemap_index.xml
+x-evidence:
+- url: https://coefficient.io/.well-known/security.txt
+  http_status: 404
+  fetched: '2026-08-14'
+- url: https://coefficient.io/llms.txt
+  http_status: 200
+  fetched: '2026-08-14'

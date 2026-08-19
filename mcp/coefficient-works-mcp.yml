@@ -1,0 +1,36 @@
+generated: '2026-08-14'
+method: probed
+source: >-
+  probes of coefficient.io, app.coefficient.io, help.coefficient.io; search of the
+  Coefficient help center, docs and the github.com/coeff org
+name: Coefficient MCP surface
+status: none
+notes: >-
+  Coefficient ships NO MCP server — neither a remote endpoint nor a local stdio
+  package — and there is nothing to derive a candidate tool list from, because the
+  company publishes no OpenAPI. /.well-known/mcp.json returns 404 on coefficient.io
+  and returns the SPA HTML shell on app.coefficient.io (a 200 that is not a
+  document — app.coefficient.io answers 200 with the same single-page-app HTML for
+  every path probed, including /openapi.json, /swagger.json and /.well-known/*,
+  so every 200 from that host was rejected as a catch-all false positive).
+  No endpoint was invented. Note that Coefficient's product does ship an AI
+  assistant inside the spreadsheet, but that is an end-user feature with no
+  agent-callable protocol surface.
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: none
+  verified: probed
+tools: []
+tool_count: 0
+x-evidence:
+- url: https://coefficient.io/.well-known/mcp.json
+  http_status: 404
+  fetched: '2026-08-14'
+- url: https://app.coefficient.io/.well-known/mcp.json
+  http_status: 200
+  content_type: text/html
+  rejected: spa-catch-all-html-shell
+  fetched: '2026-08-14'

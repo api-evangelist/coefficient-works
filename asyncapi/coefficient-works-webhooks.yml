@@ -1,0 +1,65 @@
+generated: '2026-08-14'
+method: searched
+source: https://help.coefficient.io/hc/en-us/articles/39016042240795-Webhooks
+spec_type: null
+name: Coefficient webhook surface
+notes: >-
+  READ THE DIRECTION BEFORE SCORING THIS. Coefficient publishes a webhook surface,
+  but it is INBOUND-ONLY: Coefficient issues a per-import Webhook URL that an
+  EXTERNAL system (Salesforce, HubSpot, Zapier, anything that can make an HTTP
+  call) hits to trigger an immediate refresh of that import in the spreadsheet.
+  Coefficient does NOT emit outbound event notifications to subscriber endpoints,
+  publishes no event catalog, no event payload schemas, no signing/verification
+  scheme, and no AsyncAPI document. So this is a real, documented, provider-served
+  HTTP trigger endpoint — the only programmatic surface Coefficient exposes — but
+  it is not an event-notification surface and should not be read as one.
+  No AsyncAPI exists to harvest; none was fabricated.
+direction: inbound
+delivery: caller-initiated HTTP trigger
+asyncapi_document: null
+event_catalog_published: false
+event_schemas_published: false
+signing:
+  documented: false
+  note: >-
+    No HMAC signature, no shared secret header, and no IP allowlist are documented.
+    Authorization is by possession of the opaque Webhook URL alone (bearer-URL).
+availability:
+  plans: [Pro, Enterprise]
+  trial: true
+  note: >-
+    "Webhooks are available during your Free Trial, as well as on our Pro and
+    Enterprise plans."
+endpoints:
+- id: refresh-single-import
+  label: Refresh this import only
+  direction: inbound
+  description: >-
+    Allows data refresh of the selected import. The URL is copied from the
+    Coefficient sidebar: open the import, click the 3-vertical-dot menu, select
+    "Webhook URL", then choose "Refresh this import only".
+  url_pattern: null
+  url_pattern_note: >-
+    Coefficient does not publish the webhook URL host or path template — the URL
+    is generated per import inside the product UI and is not documented anywhere
+    public. Nothing was guessed.
+  source: https://help.coefficient.io/hc/en-us/articles/39016042240795-Webhooks
+- id: refresh-all-imports-in-sheet
+  label: Refresh all imports in the sheet
+  direction: inbound
+  description: >-
+    Allows data refresh of all imports on the spreadsheet, from a single trigger URL.
+  url_pattern: null
+  source: https://help.coefficient.io/hc/en-us/articles/39016042240795-Webhooks
+observability:
+  run_history: >-
+    Webhook invocations appear in the import's "View Run History" dashboard view.
+    A webhook that FAILS does not trigger a refresh and does NOT appear in the run
+    history — so failed triggers are invisible to the operator.
+rate_limits:
+  see: rate-limits/coefficient-works-rate-limits.yml
+  summary: 12 webhook calls per hour, minimum 5 minutes between triggers (Pro/Enterprise)
+x-evidence:
+- url: https://help.coefficient.io/api/v2/help_center/en-us/articles/39016042240795.json
+  http_status: 200
+  fetched: '2026-08-14'

@@ -1,0 +1,53 @@
+generated: '2026-08-14'
+method: searched
+source: https://help.coefficient.io/hc/en-us/articles/39016042240795-Webhooks
+name: Coefficient published rate limits
+notes: >-
+  Coefficient publishes no developer REST API, so there is no general API rate
+  limit to record. It DOES publish hard limits on the one programmable HTTP
+  surface it exposes to external systems — the per-import Webhook URL that
+  triggers a data refresh. Those limits are captured below verbatim from the
+  Webhooks help article. Coefficient does not document any response headers
+  (no X-RateLimit-*, no RateLimit-*, no Retry-After) and does not document a
+  status code on exhaustion: the published behaviour is that additional triggers
+  are PAUSED until the next hourly reset, not rejected with an error the caller
+  can read. That is the finding — an agent calling the webhook URL has no runtime
+  signal telling it that it has been throttled.
+  The plan-level monthly quotas (import refreshes, export runs, alerts) are
+  recorded in plans/coefficient-works-plans-pricing.yml, not here.
+limit_count: 2
+response_headers:
+  documented: false
+  headers: []
+  status_on_exhaustion: null
+  note: >-
+    No rate-limit response headers and no 429/Retry-After semantics are documented.
+    Exhausted webhook triggers are silently paused until the next hourly reset; a
+    failed webhook does not appear in the dashboard run history.
+limits:
+- id: webhook-calls-per-hour
+  scope: per-account
+  surface: webhook trigger URL
+  window: 1 hour
+  limit: 12
+  burst: null
+  applies_to: [Pro, Enterprise]
+  description: >-
+    Both our Enterprise and Pro plans allow for up to 12 Webhook calls per hour.
+    If you exceed the 12-call limit within an hour, additional triggers will be
+    paused until the next hourly reset.
+  source: https://help.coefficient.io/hc/en-us/articles/39016042240795-Webhooks
+- id: webhook-minimum-interval
+  scope: per-webhook
+  surface: webhook trigger URL
+  window: 5 minutes
+  limit: 1
+  burst: null
+  applies_to: [Pro, Enterprise]
+  description: >-
+    A minimum interval of 5 minutes between triggers is required.
+  source: https://help.coefficient.io/hc/en-us/articles/39016042240795-Webhooks
+x-evidence:
+- url: https://help.coefficient.io/api/v2/help_center/en-us/articles/39016042240795.json
+  http_status: 200
+  fetched: '2026-08-14'

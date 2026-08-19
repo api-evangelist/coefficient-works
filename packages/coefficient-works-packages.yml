@@ -1,0 +1,73 @@
+generated: '2026-08-14'
+method: searched
+source: npm, PyPI, RubyGems, crates.io, NuGet, Maven Central, pkg.go.dev, github.com/coeff
+name: Coefficient client libraries and distribution
+notes: >-
+  An honest zero. Coefficient publishes NO first-party client library in any public
+  package registry — searched npm (registry.npmjs.org direct lookups for
+  `coefficient`, `coefficient-io`, `@coefficient/sdk` and a registry search for
+  `coefficient.io`), PyPI, RubyGems, crates.io, NuGet, Maven Central and
+  pkg.go.dev. This is consistent with the product shape: Coefficient is consumed
+  as a spreadsheet add-on, not as a library a developer imports, and it publishes
+  no developer API for a library to wrap. The company's GitHub org (github.com/coeff)
+  holds three public Python repos and none of them is a Coefficient SDK.
+  No `SDKs` pointer is wired in apis.yml because there is no SDK to point at.
+package_count: 0
+official_sdk_count: 0
+packages: []
+distribution:
+  note: >-
+    Coefficient distributes as marketplace add-ons rather than as packages. These
+    are listings, not registries — there is no registry metadata endpoint that
+    returns a version + published date for either, so `version` is recorded as
+    null with this note rather than guessed.
+  channels:
+  - channel: Google Workspace Marketplace
+    artifact: Coefficient Google Sheets Add-on
+    hosting: Google Apps Script servers
+    version: null
+    published: null
+    note: Version is not exposed by any public machine-readable endpoint.
+    source: https://help.coefficient.io/hc/en-us/articles/17575143684123-Data-Security
+  - channel: Microsoft AppSource
+    artifact: Coefficient Add-in for Microsoft Excel
+    platforms: [web, Windows, macOS]
+    version: null
+    published: null
+    note: Version is not exposed by any public machine-readable endpoint.
+    source: https://help.coefficient.io/hc/en-us/articles/17575143684123-Data-Security
+  - channel: Atlassian Marketplace
+    artifact: Coefficient Works Inc vendor listing
+    version: null
+    published: null
+    source: https://marketplace.atlassian.com/vendors/1220522/coefficient-works-inc
+github:
+  org: https://github.com/coeff
+  public_repos: 3
+  first_party_sdk: false
+  repos:
+  - name: target-cassandra
+    url: https://github.com/coeff/target-cassandra
+    description: A Singer.io target for Apache Cassandra
+    language: Python
+    relevance: data-pipeline tooling, not a Coefficient client library
+  - name: tap-salesforce
+    url: https://github.com/coeff/tap-salesforce
+    description: Singer.io tap for the Salesforce API
+    language: Python
+    relevance: data-pipeline tooling, not a Coefficient client library
+  - name: stagehand-python
+    url: https://github.com/coeff/stagehand-python
+    description: The AI Browser Automation Framework
+    language: Python
+    relevance: browser-automation framework, not a Coefficient client library
+x-evidence:
+- url: https://registry.npmjs.org/coefficient
+  http_status: 404
+  fetched: '2026-08-14'
+- url: https://pypi.org/pypi/coefficient/json
+  http_status: 404
+  fetched: '2026-08-14'
+- url: https://api.github.com/orgs/coeff/repos
+  http_status: 200
+  fetched: '2026-08-14'
