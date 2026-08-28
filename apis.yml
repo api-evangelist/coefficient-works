@@ -20,6 +20,17 @@ description: 'Coefficient Works, Inc. (operating as Coefficient) is a San Mateo,
   Google Workspace Marketplace and Microsoft AppSource. The company is backed by
   Battery Ventures, Foundation Capital and S28 Capital.'
 url: https://raw.githubusercontent.com/api-evangelist/coefficient-works/refs/heads/main/apis.yml
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: unknown
