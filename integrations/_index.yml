@@ -168,15 +168,15 @@
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
-- slug: coefficient-works-atlassian-own
-  label: Atlassian (own)
-  partner: atlassian
-  partner_name: Atlassian (own)
-  category: Workflow
+- slug: coefficient-works-hubspot-own
+  label: HubSpot (own)
+  partner: hubspot
+  partner_name: HubSpot (own)
+  category: CONNECTOR
   type: marketplace
   marketplace: own
   channel: partner-built
-  evidence: https://marketplace.atlassian.com/vendors/1220522/coefficient-works-inc
+  evidence: https://ecosystem.hubspot.com/marketplace/listing/coefficient
   source: edge
   relationship: platform-app
   status: not-a-workflow
