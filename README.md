@@ -64,26 +64,109 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Coefficient Works, Inc. (operating as **Coefficient**) is a San Mateo, California no-code data platform that connects live business data to Google Sheets and Microsoft Excel. Founded in 2019 by Navneet Loiwal and Tommy Tsai, it provides point-and-click connectors to 60+ business systems (Salesforce, HubSpot, NetSuite, QuickBooks, Snowflake, MySQL, Stripe, Looker, Tableau, Google Ads), scheduled two-way sync, Slack/email alerting, live web dashboards, and an AI assistant for spreadsheet work.
+Coefficient Works, Inc. (operating as Coefficient) is a San Mateo, California no-code data platform that connects live business data to Google Sheets and Microsoft Excel. Founded in 2019 by Navneet Loiwal and Tommy Tsai, the company provides point-and-click connectors to 60+ business systems including Salesforce, HubSpot, NetSuite, QuickBooks, Snowflake, MySQL, Stripe, Looker, Tableau and Google Ads, with scheduled two-way sync, spreadsheet-native alerting through Slack and email, live web dashboards, and an AI assistant that builds pivot tables, formulas, charts and data-cleaning steps from natural language. Coefficient is a consumer of other providers' APIs rather than a producer: as of this enrichment pass it publishes no public developer API, no OpenAPI or AsyncAPI description, no client SDKs, and no developer portal, and its "Connect Any API" feature is a consumer-side HTTP client (GET/POST, bearer token / API key / basic auth, cursor, offset and page-number pagination) that writes third-party API responses into a sheet. The one programmatic surface Coefficient serves is an inbound webhook trigger URL, issued per import on the Pro and Enterprise plans, that an external system calls to force an immediate refresh — capped at 12 calls per hour with a five-minute minimum interval. Coefficient states it is SOC 2 compliant and provides the audit report on request. Distribution is through the Google Workspace Marketplace and Microsoft AppSource. The company is backed by Battery Ventures, Foundation Capital and S28 Capital.
 
-- Website: https://coefficient.io/
-- Help Center: https://help.coefficient.io/hc/en-us
-- Pricing: https://coefficient.io/pricing
-- Data Security: https://coefficient.io/data-security
+**Areas:** Company · Spreadsheets · Google Sheets · Microsoft Excel · Data Integration · No-Code · Business Intelligence · Reporting · Revenue Operations · Software-as-a-Service
 
-## API posture
+## Coefficient Works on APIs.io
 
-Coefficient is an **API consumer, not an API producer**. As of the 2026-07-20 enrichment pass it publishes:
+Everything profiled for Coefficient Works is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/coefficient-works/](https://apis.io/providers/coefficient-works/)** — or go straight to one of the APIs or properties below.
 
-- no public developer API, developer portal, or API reference
-- no OpenAPI, AsyncAPI, or GraphQL description
-- no first-party client SDKs on npm, PyPI, or other registries
-- no MCP server, CLI, webhooks, changelog, or status page
-- no `/.well-known/` discovery documents (security.txt, openid-configuration, oauth-authorization-server, api-catalog, ai-plugin.json all returned 404)
-- no named security certifications (the Data Security page cites AWS hosting, end-to-end credential encryption, routine pen testing, and Google/Microsoft marketplace vendor compliance, but no SOC 2 / ISO 27001 / HIPAA claim)
+### Published properties
 
-It does publish a machine-readable `/llms.txt`, captured verbatim in `llms/`.
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-Distribution is via the Google Workspace Marketplace, Microsoft AppSource, and the Atlassian Marketplace.
+#### AsyncAPI (1)
 
-Backed by: Battery Ventures, Foundation Capital, S28 Capital.
+Event-driven and webhook contracts.
+
+- [Coefficient Works Webhooks](https://apis.io/asyncapis/coefficient-works/coefficient-works-webhooks/)
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Coefficient Works Domain Security](https://apis.io/security/coefficient-works/coefficient-works-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Coefficient Works Plans Pricing](https://apis.io/plans/coefficient-works/coefficient-works-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Coefficient Works Rate Limits](https://apis.io/rate-limits/coefficient-works/coefficient-works-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://coefficient.io/)
+- [Documentation](https://help.coefficient.io/hc/en-us)
+- [Getting started](https://coefficient.io/get-started)
+- [Pricing](https://coefficient.io/pricing)
+- [Sign up](https://coefficient.io/get-started)
+- [Support](https://help.coefficient.io/hc/en-us)
+- [Blog](https://coefficient.io/blog)
+- [Compliance](https://coefficient.io/data-security)
+- [Terms of service](https://coefficient.io/terms)
+- [Privacy policy](https://coefficient.io/privacy-policy)
+- [GitHub](https://github.com/coeff)
+
+## API Evangelist rating
+
+**Kin Score 45.4** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 55.4 |
+| Contract quality | 39.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 31.6 |
+| Developer ergonomics | 28.6 |
+| Access clarity | 84.2 |
+
+**Agent readiness 19.8** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | yes |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 23.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/coefficient-works/](https://apis.io/providers/coefficient-works/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Coefficient Works: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/coefficient-works/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
